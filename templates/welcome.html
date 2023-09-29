@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+
+<body class="custom-body">
+  
+    <nav class="navbar" style="background-color:#455A64;">
+    </nav>
+    <div class="welcome font-effect-neon">
+      WELCOME TO MY PORTFOLIO
+    </div>
+    <div class="sticky-top anim pro-title font-effect-outline" id="animatedText">
+      PYTHON PROGRAMMER
+    </div>
+    <div class="container">
+      <div class="d-sm-flex align-items-center">
+       <div class="pro-name">
+         <span>I AM<br> <b>KIBUULE NOAH</b></span>
+       </div>
+         <img class="image img-fluid w-50 d-flex" src="{{ url_for('static',filename='imgs/Noah.png') }}">
+      </div>
+    </div>
+
+    <div class="mt-5 about font-effect-emboss">
+      <p>Embarking on my programming journey towards the close of 2022, I found myself captivated by the intricate world of computers and their inner workings. With Python as my compass, I embarked on an exhilarating exploration. As I delved into the realm of programming, I mastered the nuances of dynamic tools like Pandas, NumPy, SciKit-Learn, and the creative canvas of Kivy and KivyMD. My prowess was put to the test as I engaged in captivating coding duels on platforms like Codewars, refining my Python expertise. Simultaneously, the allure of Machine Learning drew me into the exciting arena of Kaggle, where I honed my skills in real-world applications.</p>
+      <p>But my journey didn't stop there. I then dived into  web development. While spreading my wings across this landscape, I learnt flask web framework, CSS and HTML. Each line of code I write is a step towards creating seamless digital experiences, a testament to my insatiable curiosity and relentless pursuit of excellence. So come, wander through my portfolio, where the symphony of Python, Machine Learning, and web development come together to paint the vibrant portrait of my coding odyssey.</p>
+      <br>
+    </div>
+    <div class="skills">
+      <u><h3>Skills</h3></u>
+     <ul class="term">
+       <li><i class="bi bi-terminal-fill"></i>Python scripting</li>
+       <li><i class="bi bi-terminal-fill"></i>Data  Manipulation</li>
+       <li><i class="bi bi-terminal-fill"></i>Machine learning Deep learning</li> 
+       <li><i class="bi bi-terminal-fill"></i>Web scrapping</li>
+       <li><i class="bi bi-terminal-fill"></i>Web development with flask</li>
+       <li><i class="bi bi-terminal-fill"></i>C scripting</li>
+       <li><i class="bi bi-terminal-fill"></i>Building mobile apps with kivy and kivymd</li>
+       <li><i class="bi bi-terminal-fill"></i>Software developing e.g  automation</li>
+     </ul> 
+    </div>
+    <br>
+    <div align="center">
+      <a class="project-btn" href="/projects" type="button">Go To Projects</a>
+    </div>
+    <br>
+    <footer style="background-color:#455A64;">
+      <div class="moreinfo">
+        <div>
+          <h3>CONTACT ME</h3>
+          <i class="bi bi-telephone h1"></i><a class="text-warning h4" href="tel:+25675293087"> +25675293087</a>
+          <br>
+          <i class="bi bi-whatsapp h1"></i><a class="text-warning h4" href="tel:+25675293087"> +25675293087</a>
+        </div>
+        <br>
+        <h1>You Can Message Me below</h1>
+        <div class="container pl-5">
+          <form method="POST" class="form">
+            <label class="form-label">NAME</label>
+            <input class="form-control" type="text" name="name" placeholder="Enter Your Name" required>
+            <label class="form-label">EMAIL</label>
+            <input class="form-control" type="email" name="email" placeholder="Email or Phone Number">
+            <label class="form-label">MESSAGE</label>
+            <textarea class="form-control" name="message" id="Expand" rows="1" cols="col-md-40 col-lg-50 col-sm-5"></textarea>
+            <button class="m-1 send-btn" type="submit">Send &rArr;</button>
+          </form>
+        </div>
+      </div>
+    </footer>
+    <script src="{{ url_for('static',filename='index.js') }}"></script>
+    <script src="https://kit.fontawesome.com/3a80941382.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
+ 

@@ -1,0 +1,228 @@
+body.custom-body{
+  /* background:linear-gradient(gold,green); */
+  background-color: #B1C0CB;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: Black;
+}
+.welcome{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 300%;
+    font-family: cursive;
+    animation: 15s infinite 5s running anim_wel;
+  }
+
+.welcome{
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 150%;
+  font-family: cursive;
+}
+
+
+/**/
+/* .custom-bullet { */
+/*     list-style-image: url('imgs/promt_2.png'); */
+/*     width: 1px; */
+/*     height: 1px; */
+/*     list-style-position:inside; */
+/* } */
+
+
+.pro-title{
+  margin: 3px;
+  height: 50px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+}
+
+
+/* animation */
+.anim{
+  font-size: 27px;
+  /* font-weight: bold; */
+  /* color: #333; */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow text */
+}
+
+.disappear {
+    animation: textDisappear 0.5s forwards;
+}
+
+.appear {
+    animation: textAppear 0.5s forwards;
+}
+
+@keyframes textDisappear {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes textAppear {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes anim_wel {
+  100%{transform: rotateY(360deg);}
+}
+
+.profile{
+  border: 3px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: row;
+  margin: 5px;
+  background-image: url("imgs/promt_2.png");/*url("imgs/coding_1.gif");*/
+  background-size:60%;
+  background-position-x: 31%;
+  background-attachment:scroll;
+}
+
+/* pron name container */
+.pro-name{
+  align-self: center;
+  color: #006064;
+  margin-right: 10px;
+  font-size: 120%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+/* Style the list */ 
+.term {
+  list-style-type: none;
+}
+.term i{
+    padding-right: 4px;
+}
+
+
+.image{
+  align-self: first baseline;
+  border-radius: 50%;
+  border: 3px solid green;
+  box-shadow: 0px 10px 0px #000; 
+}
+
+/* container for small screens */
+.image-container {
+    border-radius: 100px;
+    height:  100%;/*200px;*/
+    width:  50%;/*200px;*/
+    display: flex;
+    align-self: auto;
+    flex-wrap: wrap;
+    overflow: hidden;
+    box-shadow: 0px 8px 0px #000;
+}
+.about{
+  margin: 5px;
+  text-align: center;
+  font-size: 100%;
+  color: #4D24E9;
+  font-family:Sofia, cursive,Verdana;
+ }
+
+.skills{
+  margin: 5px;
+}
+
+.project-btn{
+  border: 3px solid #006064;
+  box-shadow: 0px 5px 5px black;
+  border-radius:10px;
+  height: 25%;
+  width: 40%;
+  text-decoration: none;
+  color:black;
+}
+
+
+.project-btn:active{
+  color: white;
+  background-color: grey;
+}
+
+.send-btn{
+  display: flex;
+  border: 3px solid #006064;
+  box-shadow: 0px 5px 5px black;
+  border-radius:10px;
+}
+
+.send-btn:active{
+  color: white;
+  background-color: grey;
+}
+
+
+
+.moreinfo{
+  /* border: 3px solid #000; */
+  /* background: linear-gradient(green,black); */
+  break-before: avoid;
+}
+
+/* ###################################################### */
+/* container For large screens */
+@media (min-width: 768px){
+  .pro-name{
+    display: flex;
+    flex-grow:1;
+    /* justify-self: center; */
+    color: #006064;
+    /* border: 3px solid #000; */
+    margin-right: 10%;
+    font-size: 210%;
+    font-weight: 500;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .pro-title{
+    margin: 3px;
+    height: 50px;
+    font-size: 200%;
+    text-align: center;
+  }
+}
+/* Custom CSS */
+#Expand {
+    resize: none; /* Prevent manual resizing */
+    overflow-y: hidden; /* Hide the vertical scrollbar */
+    min-height: 40px; /* Set the minimum height */
+    max-height: 200px; /* Set the maximum height */
+}
+
+.card{
+  background: #A5DA70;
+  box-shadow: 10px 10px 0px  #263238;
+}
+.card-con {
+    display: inline-block;
+    margin-right: 20px; /* Add spacing between containers as needed */
+}
+
+.truncate-text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-height: 500px; /* Adjust as needed */
+}
+
+.read-more{
+  display: flex;
+}
+.read-less {
+    display:none;
+}

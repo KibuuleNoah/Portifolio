@@ -18,7 +18,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navmenu">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav"> <!-- me-auto mb-2 mb-lg-0">-->
           <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
           </li>
@@ -44,7 +44,7 @@
       <div class="container">
         <h2 align="center">WEB DEVELOPMENT PROJECTS</h2>
         <div class="row text-center g-4">
-          {% for data in API %}
+          {% for data in API["MOB_APP"] %}
           <div class="col-md">
             <div class="card" style="width: 18rem;">
               <h5 class="card-title">{{data['title']}}</h5>
@@ -114,25 +114,18 @@
       <div class="container">
         <h2 align="center">MACHINE LEARNING PROJECTS</h2>
         <div class="row text-center g-4">
-          {% for i in range(4) %}
+          {% for data in API["ML"] %}
           <div class="col-md">
             <div class="card" style="width: 18rem;">
               <h5 class="card-title">Project title</h5>
               <div class="card-body">
                 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                   <div class="carousel-inner">
+                    {% for img in data["images"] %}
                     <div class="carousel-item active">
-                      <img src="{{ url_for('static',filename='imgs/project.jpg') }}" class="d-block w-100" alt="...">
+                      <img src="{{ url_for('static',filename=img) }}" class="d-block w-100" alt="...">
                     </div>
-                    <div class="carousel-item">
-                      <img src="{{ url_for('static',filename='imgs/project.jpg') }}" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="{{ url_for('static',filename='imgs/project.jpg') }}" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="{{ url_for('static',filename='imgs/project.jpg') }}" class="d-block w-100" alt="...">
-                    </div>
+                    {% endfor %}
                   </div>
                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -147,7 +140,7 @@
               <div class="card-body">
                 <h6 class="card-title">Description</h6>
                 <div class="text-container">
-                  <p class="card-text truncate-text">Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</p>
+                  <p class="card-text truncate-text">{{data["desc"]}}</p>
                   <a href="#" class="read-more">Read More</a>
                   <a href="#" class="read-less">Read Less</a>
                 </div>

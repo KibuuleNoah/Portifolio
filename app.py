@@ -2,7 +2,7 @@ from flask import Flask, send_file, request, render_template, url_for, abort
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func
 from werkzeug.security import generate_password_hash, check_password_hash
-from API import api
+from API import PROJECTS_JSON
 from io import BytesIO
 
 app = Flask(__name__)
@@ -34,7 +34,7 @@ def welcome():
 
 @app.route("/projects")
 def projects():
-    return render_template("base_projects.html", API=api)
+    return render_template("base_projects.html", API=PROJECTS_JSON)
 
 
 @app.route("/pooldt<p>", methods=["POST", "GET"])

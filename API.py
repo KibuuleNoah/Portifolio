@@ -4,17 +4,25 @@
 # #Description
 import os
 
-api = []
-for i in range(5):
+PROJECTS_JSON = {"MOB_APP": [], "ML": []}
+
+projects = {
+    "PERSONAL DB": ["per_db", "lorem.....", "MOB_APP"],
+    "HANDWRITTEN": ["hand_rec", "loremsent....", "ML"],
+}
+for proj_title in projects:
     Project = {
-        "title": f"Title_1",
-        "images": ["imgs/projects/" + i for i in os.listdir("./static/imgs/projects/")],
-        "desc": "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderi.",
+        "title": proj_title,
+        "images": [
+            "imgs/projects/" + img
+            for img in os.listdir("./static/imgs/projects/")
+            if img.startswith(projects[proj_title][0])
+        ],
+        "desc": projects[proj_title][1],
     }
 
-    api.append(Project)
+    PROJECTS_JSON[projects[proj_title][2]].append(Project)
 
-# f = os.walk("./static/imgs/").__next__()
-# for i in os.listdir("./static/imgs/proj_1"):
-#     print(i)
-#
+
+# for i in PROJECTS_JSON["MOB_APP"]:
+# print(i)

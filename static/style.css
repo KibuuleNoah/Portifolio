@@ -22,7 +22,16 @@ body.custom-body{
   font-family: cursive;
 }
 
+#animatedText{
+  padding: 0px;
+  position: sticky;
+  top: 0px;
+}
 
+.anim.sticky{
+  color: red;
+  background: burlywood;
+}
 /**/
 /* .custom-bullet { */
 /*     list-style-image: url('imgs/promt_2.png'); */
@@ -43,8 +52,6 @@ body.custom-body{
 /* animation */
 .anim{
   font-size: 27px;
-  /* font-weight: bold; */
-  /* color: #333; */
   white-space: nowrap; /* Prevent text from wrapping */
   overflow: hidden; /* Hide overflow text */
 }

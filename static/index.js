@@ -1,4 +1,3 @@
-
 // Get the animated text element
 const animatedText = document.getElementById('animatedText');
 
@@ -42,56 +41,6 @@ function autoExpand(textarea) {
     textarea.style.height = "auto";
     textarea.style.height = (textarea.scrollHeight) + "px";
 }
-//
-// document.addEventListener("DOMContentLoaded", function () {
-//     const truncateText = document.querySelector(".truncate-text");
-//     const readMoreBtn = document.querySelector(".read-more");
-//     const readLessBtn = document.querySelector(".read-less");
-//
-//     readMoreBtn.addEventListener("click", function (e) {
-//         e.preventDefault();
-//         truncateText.style.whiteSpace = "normal";
-//         readMoreBtn.style.display = "none";
-//         readLessBtn.style.display = "inline";
-//     });
-//
-//     readLessBtn.addEventListener("click", function (e) {
-//         e.preventDefault();
-//         truncateText.style.whiteSpace = "nowrap";
-//         readMoreBtn.style.display = "inline";
-//         readLessBtn.style.display = "none";
-//     });
-// });
-//
-//
-// document.addEventListener("DOMContentLoaded", function () {
-//     const readMoreBtns = document.querySelectorAll(".read-more");
-//     const readLessBtns = document.querySelectorAll(".read-less");
-//
-//     readMoreBtns.forEach(function (readMoreBtn) {
-//         readMoreBtn.addEventListener("click", function (e) {
-//             e.preventDefault();
-//             const textContainer = this.closest(".text-container");
-//             const truncateText = textContainer.querySelector(".truncate-text");
-//
-//             truncateText.style.whiteSpace = "normal";
-//             readMoreBtn.style.display = "none";
-//             textContainer.querySelector(".read-less").style.display = "inline";
-//         });
-//     });
-//
-//     readLessBtns.forEach(function (readLessBtn) {
-//         readLessBtn.addEventListener("click", function (e) {
-//             e.preventDefault();
-//             const textContainer = this.closest(".text-container");
-//             const truncateText = textContainer.querySelector(".truncate-text");
-//
-//             truncateText.style.whiteSpace = "nowrap";
-//             readLessBtn.style.display = "none";
-//             textContainer.querySelector(".read-more").style.display = "inline";
-//         });
-//     });
-// });
 
 document.addEventListener("DOMContentLoaded", function () {
     const textContainers = document.querySelectorAll(".text-container");
@@ -115,5 +64,27 @@ document.addEventListener("DOMContentLoaded", function () {
             readLessBtn.style.display = "none";
         });
     });
+});
+
+
+// Select the element by its class
+const element = document.querySelector('.anim');
+// Store the original color
+// const originalColor = getComputedStyle(element).backgroundColor;
+// Add a scroll event listener to track the element's position
+window.addEventListener('scroll', () => {
+  // Calculate the element's position from the top
+  const elementTop = element.getBoundingClientRect().top;
+
+  // Check if the position is greater than 5 pixels from the top
+  if (elementTop == 0) {
+    // Change the color when it's greater than 5 pixels from the top
+    element.style.color = "green";
+    element.style.backgroundColor = "#B1C0CB";
+  } else{
+    // Revert the color when it's less than 5 pixels from the top
+    element.style.color = "black";
+    element.style.backgroundColor = "";
+  }
 });
 

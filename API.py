@@ -23,6 +23,4 @@ for proj_title in projects:
 
     PROJECTS_JSON[projects[proj_title][2]].append(Project)
 
-
-# for i in PROJECTS_JSON["MOB_APP"]:
-# print(i)
+certs = list(os.walk("./static/certs/"))[-1][-1]

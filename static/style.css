@@ -1,5 +1,4 @@
 body.custom-body{
-  /* background:linear-gradient(gold,green); */
   background-color: #B1C0CB;
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,21 +24,9 @@ body.custom-body{
 #animatedText{
   padding: 0px;
   position: sticky;
+  box-shadow: 0px 3px 3px #000;
   top: 0px;
 }
-
-.anim.sticky{
-  color: red;
-  background: burlywood;
-}
-/**/
-/* .custom-bullet { */
-/*     list-style-image: url('imgs/promt_2.png'); */
-/*     width: 1px; */
-/*     height: 1px; */
-/*     list-style-position:inside; */
-/* } */
-
 
 .pro-title{
   margin: 3px;
@@ -139,8 +126,13 @@ body.custom-body{
   text-align: center;
   font-size: 100%;
   color: #4D24E9;
-  font-family:Sofia, cursive,Verdana;
+  font-family: PlayFairDisplay,fantasy,Verdana,monospace;
  }
+
+.about p::first-letter{
+  color: green;
+  /* initial-letter: 1 1; */
+}
 
 .skills{
   margin: 5px;
@@ -177,14 +169,12 @@ body.custom-body{
 
 
 .moreinfo{
-  /* border: 3px solid #000; */
-  /* background: linear-gradient(green,black); */
   break-before: avoid;
 }
 
 /* ###################################################### */
 /* container For large screens */
-@media (min-width: 768px){
+@media (max-width: 700px){
   .pro-name{
     display: flex;
     flex-grow:1;
@@ -202,7 +192,26 @@ body.custom-body{
     font-size: 200%;
     text-align: center;
   }
+  .cert-cont{
+    display: grid;
+    grid-template-columns: 4fr;
+    gap: 3px;
+  }
 }
+
+@media (min-width: 701px){
+  .cert-cont{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    gap: 3px;
+  }
+}
+
+.certf{
+  height: 10em;
+  width: 17em;
+}
+
 /* Custom CSS */
 #Expand {
     resize: none; /* Prevent manual resizing */

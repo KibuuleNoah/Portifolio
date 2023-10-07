@@ -4,11 +4,14 @@
 # #Description
 import os
 
-PROJECTS_JSON = {"MOB_APP": [], "ML": []}
+GUI_PRO = []
+NON_GUI = []
 
 projects = {
-    "PERSONAL DB": ["per_db", "lorem.....", "MOB_APP"],
-    "HANDWRITTEN": ["hand_rec", "loremsent....", "ML"],
+    "PERSONAL DB": ["per_db", "lorem.....", "mobile development"],
+    "HANDWRITTEN": ["hand_rec", "loremsent....", "machine learning"],
+    "NOTES BOOK": ["notes", "loremPara.....", "python scripting"],
+    "USD<-->UGX": ["curr", "loremPara....", "web scrabbing"],
 }
 for proj_title in projects:
     Project = {
@@ -18,9 +21,12 @@ for proj_title in projects:
             for img in os.listdir("./static/imgs/projects/")
             if img.startswith(projects[proj_title][0])
         ],
+        "cat": projects[proj_title][-1],
         "desc": projects[proj_title][1],
     }
 
-    PROJECTS_JSON[projects[proj_title][2]].append(Project)
+    GUI_PRO.append(Project)
 
 certs = list(os.walk("./static/certs/"))[-1][-1]
+
+# print(PROJECTS_JSON)

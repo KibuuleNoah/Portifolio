@@ -83,7 +83,7 @@ window.addEventListener('scroll', () => {
     element.style.backgroundColor = "#B1C0CB";
   } else{
     // Revert the color when it's less than 5 pixels from the top
-    element.style.color = "black";
+    element.style.color = "white";
     element.style.backgroundColor = "";
   }
 });

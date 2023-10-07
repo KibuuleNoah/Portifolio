@@ -9,7 +9,7 @@ from flask import (
 )
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-from API import PROJECTS_JSON, certs
+from API import GUI_PRO, NON_GUI, certs
 import sqlite3, datetime
 
 
@@ -42,7 +42,7 @@ def welcome():
 
 @app.route("/projects")
 def projects():
-    return render_template("base_projects.html", API=PROJECTS_JSON)
+    return render_template("base_projects.html", GUI=GUI_PRO, NON_GUI=NON_GUI)
 
 
 @app.route("/viewmsg", methods=["POST", "GET"])
@@ -67,5 +67,7 @@ def media():
     )
 
 
-app.app_context().push()
-db.create_all()
+if __name__ == "__main__":
+    app.run(debug=True)
+    app.app_context().push()
+    db.create_all()

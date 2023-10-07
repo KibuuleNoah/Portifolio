@@ -67,12 +67,5 @@ def media():
     )
 
 
-if __name__ == "__main__":
-    app.app_context().push()
-    db.create_all()
-    # init_db()
-    import logging
-
-    logging.basicConfig(filename="./loggings.log", level=logging.DEBUG)
-    app.run(debug=True, host="0.0.0.0")
-    # app.run(debug=True)
+app.app_context().push()
+db.create_all()

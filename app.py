@@ -74,5 +74,5 @@ if __name__ == "__main__":
     import logging
 
     logging.basicConfig(filename="./loggings.log", level=logging.DEBUG)
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0")
     # app.run(debug=True)

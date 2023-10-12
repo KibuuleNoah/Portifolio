@@ -72,6 +72,7 @@ const element = document.querySelector('.anim');
 // Store the original color
 // const originalColor = getComputedStyle(element).backgroundColor;
 // Add a scroll event listener to track the element's position
+/*
 window.addEventListener('scroll', () => {
   // Calculate the element's position from the top
   const elementTop = element.getBoundingClientRect().top;
@@ -87,4 +88,4 @@ window.addEventListener('scroll', () => {
     element.style.backgroundColor = "";
   }
 });
-
+*/

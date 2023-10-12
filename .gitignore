@@ -1,0 +1,6 @@
+./database.db
+./loggings.log
+__pycache__
+instance/database.db
+instance/main.db
+

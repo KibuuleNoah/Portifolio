@@ -1,97 +1,99 @@
 {% extends "base.html" %}
-{% block title%}Projects{% endblock %}
-{% block content%}
-<body style="background: linear-gradient(#20EDEE, #B1C0CB); background-repeat: no-repeat;">         
-<nav class="navbar navbar-expand-lg bg-info py-3 fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand text-center" href="#">MY PROJECTS</a>
-    <a href="/"><button class="navbar-toggler" type="button">
-    HOME<!-- <span class="navbar-toggler-icon"></span> -->
-    </button></a>
-  </div>
-</nav>
-<!---->
-  <!--GUIS-->
-  <br><br><br> 
-  <section id="web" class="m-sm-2 m-md-4 m-lg-6 p-1 border pb-3 border-primary">
-    <div class="container">
-      <h2 align="center">GUI PROJECTS</h2>
-      <div class="row text-center g-4">
-        {% for data in GUI %}
-        <div class="col-md">
-          <div class="card" style="width: 18rem;">
-            <h5 class="card-title">{{data['title']}}</h5>
-            <div class="card-body">
-              <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  {% for img in data['images'] %}
-                  <div class="carousel-item active">
-                    <img src="{{ url_for('static',filename=img) }}" class="d-block w-100" alt="...">
+{% block title %}Projects{% endblock %}
+{% block content %}
+  <body style="background:linear-gradient(#B9E0DD,#00ff9f); background-repeat: no-repeat;">
+    <nav class="navbar navbar-expand-lg py-3 fixed-top" style="background-color:#A5DA70";>
+      <div class="container-fluid">
+        <a class="navbar-brand text-center" href="#">MY PROJECTS</a>
+        <a href="/"><button class="navbar-toggler" type="button">
+          HOME
+        </button></a>
+      </div>
+    </nav>
+    <!-- GUIS -->
+    <br><br><br>
+    <section id="gui" class="m-sm-2 m-md-4 m-lg-6 p-1 border pb-3 border-primary" style="align-items: center; align-content: center; justify-content: center;">
+      <div class="container" style="align-items: center; align-content: center; justify-content: center;">
+        <h2 align="center">GUI PROJECTS</h2>
+        <div class="row text-center g-5 center">
+          {% for data in GUI %}
+          <div class="col-md col-sm">
+            <div class="card" style="width: 20rem;">
+              <h5 class="card-title">{{data['title']}}</h5>
+              <div class="card-body">
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    {% for img in data['images'] %}
+                    <div class="carousel-item active">
+                      <img src="{{ url_for('static', filename=img) }}" class="d-block w-100" alt="...">
+                    </div>
+                    {% endfor %}
                   </div>
-                  {% endfor %}
+                  <button class="carousel-control-prev" type="button"
+                          data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button"
+                          data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" ariahidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div> 
-            </div>
-            <div class="card-body">
-              <h6 align="center" class="card-title">{{data["cat"]}}</h6>
-              <h6 align="left" class="card-title">Description</h6>
-              <div class="text-container">
-                <p class="card-text truncate-text">{{data['desc']}}</p>
-                <a href="#" class="read-more">Read More</a>
-                <a href="#" class="read-less">Read Less</a>
-                <a href="#" class="card-link">View code</a> on Github
               </div>
-            </div>  
+              <div class="card-body">
+                <h6 align="center" class="card-title">{{data["cat"]}}</h6>
+                <h6 align="left" class="card-title">Description</h6>
+                <div class="text-container">
+                  <p class="card-text truncate-text">{{data['desc']}}</p>
+                  <a href="#" class="read-more">Read More</a>
+                  <a href="#" class="read-less">Read Less</a>
+                  <a href="#" class="card-link">View code</a> on Github
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        {% endfor %}
-      </section>
-
-  <!--NON GUIS-->
-  <section id="other" class="m-sm-2 m-md-4 m-lg-6 p-1 border border-primary">
-    <div class="container">
-      <h2 align="center">NON GUI PROJECTS</h2>
-      <div class="row text-center g-4">
-      {% for _ in range(8) %}
-      <div class="col-md">
-        <div class="card" style="width: 18rem;">
-          <h5 class="card-title">Hand Written</h5>
-          <img src="{{ url_for('static',filename='imgs/project.jpg') }}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h6 align="center" class="card-title">Machine learning</h6>
-            <h6 align="left" class="card-title">Description</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-          <div class="card-body">
-            <!-- <a href="#" class="card-link">Card link</a> -->
-            <a href="#" class="card-link">View code</a> on Github
-          </div>
+          {% endfor %}
         </div>
       </div>
-      {% endfor %}
-    </div>
-    </div>
-  </section>
-   <!-- Footer -->
-  <footer class="p-5 bg-dark text-white text-center position-relative">
-    <div class="container">
-      <p class="lead">Copyright &copy; 2023-2025 Noah Tristar</p>
+    </section>
 
-      <a href="#navbar" class="position-absolute bottom-0 end-0 p-5">
-        <i class="bi bi-arrow-up-circle h1"></i>
-      </a>
-    </div>
-  </footer>
-
-  <script src="{{ url_for('static',filename='index.js') }}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <!-- NON GUIS -->
+    <section id="nongui" class="m-sm-2 m-md-4 m-lg-6 p-1 border border-primary">
+      <div class="container">
+        <h2 align="center">NON GUI PROJECTS</h2>
+        <div class="row text-center g-5">
+          {% for _ in range(8) %}
+          <div class="col-md">
+            <div class="card" style="width: 20rem;">
+              <h5 class="card-title">Hand Written</h5>
+              <img src="{{ url_for('static', filename='imgs/project.jpg') }}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h6 align="center" class="card-title">Machine learning</h6>
+                <h6 align="left" class="card-title">Description</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+              <div class="card-body">
+                <a href="#" class="card-link">View code</a> on Github
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="p-5 bg-dark text-white text-center position-relative">
+      <div class="container">
+        <p class="lead">Copyright &copy; 2023-2025 Noah Tristar</p>
+        <a href="#gui" class="position-absolute bottom-0 end-0 p-5">
+          <i class="bi bi-arrow-up-circle h1"></i>
+        </a>
+      </div>
+    </footer>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='node_modules/eruda/eruda.js') }}"></script>
+    <script>eruda.init();</script>
+  </body>
 {% endblock %}

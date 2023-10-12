@@ -5,7 +5,7 @@
   <nav class="navbar" style="background-color:#455A64;">
   </nav>
   <div class="welcome font-effect-neon">
-    WELCOME TO MY PORTFOLIO
+    W E L C 0 M E 
   </div>
   <div class="anim pro-title font-effect-outline" id="animatedText">
     PYTHON PROGRAMMER
@@ -15,41 +15,44 @@
      <div class="pro-name">
        <span>I AM<br> <b>KIBUULE NOAH</b></span>
      </div>
-       <img class="image img-fluid w-50 d-flex" src="{{ url_for('static',filename='imgs/Noah.png') }}">
+       <img class="image img-fluid w-50 d-flex mb-3" src="{{ url_for('static',filename='imgs/Noah.png') }}">
     </div>
   </div>
-
-  <div class="mt-5 about font-effect-emboss">
-    <p>Embarking on my programming journey towards the close of 2022, I found myself captivated by the intricate world of computers and their inner workings. With Python as my compass, I embarked on an exhilarating exploration. As I delved into the realm of programming, I mastered the nuances of dynamic tools like Pandas, NumPy, SciKit-Learn, and the creative canvas of Kivy and KivyMD. My prowess was put to the test as I engaged in captivating coding duels on platforms like Codewars, refining my Python expertise. Simultaneously, the allure of Machine Learning drew me into the exciting arena of Kaggle, where I honed my skills in real-world applications.</p>
-    <p>But my journey didn't stop there. I then dived into  web development. While spreading my wings across this landscape, I learnt flask web framework, CSS and HTML. Each line of code I write is a step towards creating seamless digital experiences, a testament to my insatiable curiosity and relentless pursuit of excellence. So come, wander through my portfolio, where the symphony of Python, Machine Learning, and web development come together to paint the vibrant portrait of my coding odyssey.</p>
+  
+  <section style="background:linear-gradient(#B9E0DD,#00ff9f);background-repeate: no-repeat;">
+    <div class="mt-5">
+      <u><h3>About me</h3></u>
+      <p class="about font-effect-emboss">Embarking on my programming journey towards the close of 2022, I found myself captivated by the intricate world of computers and their inner workings. With Python as my compass, I embarked on an exhilarating exploration. As I delved into the realm of programming, I mastered the nuances of dynamic tools like Pandas, NumPy, SciKit-Learn, and the creative canvas of Kivy and KivyMD. My prowess was put to the test as I engaged in captivating coding duels on platforms like Codewars, refining my Python expertise. Simultaneously, the allure of Machine Learning drew me into the exciting arena of Kaggle, where I honed my skills in real-world applications.</p>
+      <p class="about font-effect-emboss">But my journey didn't stop there. I then dived into  web development. While spreading my wings across this landscape, I learnt flask web framework, CSS and HTML. Each line of code I write is a step towards creating seamless digital experiences, a testament to my insatiable curiosity and relentless pursuit of excellence. So come, wander through my portfolio, where the symphony of Python, Machine Learning, and web development come together to paint the vibrant portrait of my coding odyssey.</p>
+     <br>
+    </div>
+    <div class="skills">
+      <u><h3>Skills</h3></u>
+     <ul class="term">
+       <li><i class="bi bi-terminal-fill"></i>Python scripting</li>
+       <li><i class="bi bi-terminal-fill"></i>Data  Manipulation</li>
+       <li><i class="bi bi-terminal-fill"></i>Machine learning Deep learning</li> 
+       <li><i class="bi bi-terminal-fill"></i>Web scrapping</li>
+       <li><i class="bi bi-terminal-fill"></i>Web development with flask</li>
+       <li><i class="bi bi-terminal-fill"></i>C scripting</li>
+       <li><i class="bi bi-terminal-fill"></i>Building mobile apps with kivy and kivymd</li>
+       <li><i class="bi bi-terminal-fill"></i>Software developing e.g  automation</li>
+     </ul> 
+    </div>
+    <details>
+      <summary>Certifications</summary>
+      <div class="cert-cont">
+      {% for cert in certs %}
+        <img src="{{url_for('static',filename='certs/' + cert)}}" class="certf" alt="">
+      {% endfor %}
+      </div>
+    </details>
     <br>
-  </div>
-  <div class="skills">
-    <u><h3>Skills</h3></u>
-   <ul class="term">
-     <li><i class="bi bi-terminal-fill"></i>Python scripting</li>
-     <li><i class="bi bi-terminal-fill"></i>Data  Manipulation</li>
-     <li><i class="bi bi-terminal-fill"></i>Machine learning Deep learning</li> 
-     <li><i class="bi bi-terminal-fill"></i>Web scrapping</li>
-     <li><i class="bi bi-terminal-fill"></i>Web development with flask</li>
-     <li><i class="bi bi-terminal-fill"></i>C scripting</li>
-     <li><i class="bi bi-terminal-fill"></i>Building mobile apps with kivy and kivymd</li>
-     <li><i class="bi bi-terminal-fill"></i>Software developing e.g  automation</li>
-   </ul> 
-  </div>
-  <details>
-    <summary>Certifications</summary>
-    <div class="cert-cont">
-    {% for cert in certs %}
-      <img src="{{url_for('static',filename='certs/' + cert)}}" class="certf" alt="">
-    {% endfor %}
+    <div align="center">
+      <a class="project-btn" href="/projects" type="button">Go To Projects</a>
     </div>
-  </details>
-  <br>
-  <div align="center">
-    <a class="project-btn" href="/projects" type="button">Go To Projects</a>
-  </div>
-  <br>
+  </section>
+    <!-- <br> -->
   <footer style="background-color:#455A64;">
     <div class="moreinfo">
       <div>

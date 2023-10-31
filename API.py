@@ -8,10 +8,11 @@ GUI_PRO = []
 NON_GUI = []
 
 projects = {
-    "PERSONAL DB": ["per_db", "lorem.....", "mobile development"],
-    "HANDWRITTEN": ["hand_rec", "loremsent....", "machine learning"],
-    "NOTES BOOK": ["notes", "loremPara.....", "python scripting"],
-    "USD<-->UGX": ["curr", "loremPara....", "web scrabbing"],
+    "PERSONAL DB": ["per_db", "coming soon...", "mobile development"],
+    "HANDWRITTEN": ["hand_rec", "coming soon...", "machine learning"],
+    "NOTES BOOK": ["notes", "coming soon...", "python scripting"],
+    "USD<-->UGX": ["curr", "coming soon...", "web scrabbing"],
+    "Gmail clone": ["gmail", "coming soon...", "mobile development"],
 }
 for proj_title in projects:
     Project = {

@@ -11,9 +11,11 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from API import GUI_PRO, NON_GUI, certs
 import sqlite3, datetime
-
+from vict import vict_bp
 
 app = Flask(__name__)
+app.register_blueprint(vict_bp)
+
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATION"] = False
 db = SQLAlchemy(app)
